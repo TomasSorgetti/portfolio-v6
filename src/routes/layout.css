@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/Geist-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/Geist-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('../lib/assets/fonts/Geist-ExtraBold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('../lib/assets/fonts/Geist-ExtraLight.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('../lib/assets/fonts/Geist-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('../lib/assets/fonts/Geist-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('../lib/assets/fonts/Geist-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('/fonts/Geist-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src: url('../lib/assets/fonts/Geist-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--background: #000000;
+	--text-primary: #ffffff;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-background-bis: #1c1c1c;
+	--color-card-background: #101010;
+
+	--color-primary: #a300f8;
+
+	--color-border: #313131;
+
+	--color-font-primary: var(--text-primary);
+	--color-font-secondary: #acacac;
+	--color-font-invert: #000000;
+}
+
+body {
+	font-family: Geist, sans-serif;
+	background-color: var(--color-background);
+	color: var(--text-primary);
+}
