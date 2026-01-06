@@ -37,20 +37,19 @@
 		<div
 			class="text-left pt-0 pr-4 pb-40 pl-12 sm:pt-0 sm:px-8 sm:pb-40 md:pr-16 lg:max-w-150 xl:max-w-175"
 		>
-			<p class="text-2xl font-thin lg:text-[3.25rem]">Hi, I'm Tomás</p>
+			<p class="text-xl font-thin lg:text-2xl">Hi, I'm Tomás — Full Stack Developer</p>
 
-			<h1 id="hero-heading" class="text-[2rem] font-black mb-4 lg:text-[3.25rem]">
-				Full Stack Developer
+			<h1 id="hero-heading" class="text-[2rem] font-black mb-4 lg:text-5xl lg:mt-2">
+				Building High-Performance Web Apps for the Modern Web
 			</h1>
 
 			<p class="text-base font-thin mb-4 max-w-lg leading-relaxed xl:max-w-125">
-				I engineer scalable web applications using the <strong>JavaScript ecosystem</strong>.
-				Focusing on <strong>performance and UX</strong>, I bring technical precision and an agile
-				mindset to help <strong>SaaS teams drive growth.</strong>
+				I bridge the gap between complex backend logic and intuitive frontend experiences.
+				Specialized in JavaScript, performance optimization, and clean, maintainable code.
 			</p>
 
 			<div class="pt-4 flex flex-wrap items-center gap-4">
-				<MainButton href="#contact" label="Let's work together" />
+				<MainButton href="#my-work" label="View My Work" />
 			</div>
 		</div>
 	</div>

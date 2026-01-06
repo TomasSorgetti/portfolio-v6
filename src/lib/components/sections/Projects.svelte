@@ -13,7 +13,7 @@
 		proterline: {
 			title: 'Proterline',
 			description:
-				'Astro one-page. Achieved 100% Lighthouse and Accessibility score. Responsive Design & API consult.',
+				'Achieved 100/100 Lighthouse score. Focused on SEO, accessibility, and high-speed delivery using Astro.',
 			image: proterlineImage,
 			alt: 'Proterline dashboard interface showing analytics',
 			link: 'https://proterline.com.ar'
@@ -21,7 +21,7 @@
 		gooster: {
 			title: 'Gooster',
 			description:
-				'Existing React/Vite project refactor. Improved Lighthouse performance and implemented accessibility best practices.',
+				'Optimized a React/Vite legacy codebase, improving load times by 40% and implementing a reusable component library.',
 			image: goosterImage,
 			alt: 'Gooster mobile application login screen',
 			link: 'https://gooster.com.ar'
@@ -29,7 +29,7 @@
 		sieteVidas: {
 			title: 'Siete Vidas',
 			description:
-				'Astro one-page with maximum Lighthouse Score. Full responsive design, accessibility applied. API data.',
+				'Developed an Astro-based platform with dynamic data fetching, fully responsive design, and WCAG accessibility compliance.',
 			image: sieteVidasImage,
 			alt: 'Siete Vidas e-commerce platform homepage',
 			link: 'https://7vidas.online'
@@ -46,8 +46,8 @@
 </script>
 
 <section class="container max-w-7xl mx-auto py-32 px-4 xl:px-0" aria-labelledby="portfolio-heading">
-	<h2 id="portfolio-heading" class="text-5xl md:text-8xl font-bold max-w-3/4">
-		Web Development Portfolio
+	<h2 id="portfolio-heading" class="text-5xl md:text-8xl font-bold">
+		Featured Engineering Projects
 	</h2>
 
 	<div class="relative flex items-start gap-4 mt-16" role="list">

@@ -27,9 +27,12 @@
 		</div>
 
 		<div data-label="features-content">
-			<h2 id="features-title" class="text-3xl mb-8 lg:text-5xl" data-label="features-heading">
-				<span class="sr-only">Comprehensive development:</span>
-				From conceptual design to scalable deployment
+			<h2
+				id="features-title"
+				class="text-3xl mb-8 lg:text-5xl lg:max-w-md"
+				data-label="features-heading"
+			>
+				Technical Expertise & Workflow
 			</h2>
 
 			<div class="w-full h-px bg-primary my-8 lg:my-12" role="presentation"></div>
@@ -41,17 +44,17 @@
 			>
 				<FeatureItem
 					number="01."
-					text="I bridge the gap between design and code using Figma. I translate creative concepts into pixel-perfect, interactive prototypes ready for development."
+					text="From Design to Code. I translate Figma prototypes into pixel-perfect, accessible interfaces, ensuring design fidelity and seamless transitions."
 				/>
 
 				<FeatureItem
 					number="02."
-					text="I engineer robust interfaces with React and Next.js, focusing on component reusability, accessibility standards, and Core Web Vitals optimization."
+					text="Performance-First Frontend. Building with React & Next.js focused on Core Web Vitals, SEO, and component modularity for long-term scalability."
 				/>
 
 				<FeatureItem
 					number="03."
-					text="I build scalable server-side logic using Node.js. I integrate secure RESTful APIs and databases to ensure seamless data flow and system reliability."
+					text="Solid Server-Side Logic. Developing secure RESTful APIs with Node.js and PostgreSQL, prioritizing data integrity and system reliability."
 				/>
 			</ul>
 		</div>

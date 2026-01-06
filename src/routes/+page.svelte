@@ -25,7 +25,7 @@
 	/>
 
 	<LazyVisible
-		componentLoader={() => import('$lib/components/sections/Team.svelte')}
+		componentLoader={() => import('$lib/components/sections/Pitch.svelte')}
 		enablePrefetch={false}
 		class="w-full"
 	/>

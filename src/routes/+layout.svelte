@@ -9,12 +9,11 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Junior Full Stack Developer - JavaScript & Web Solutions | Tomás Sorgetti</title>
+	<title>Tomás Sorgetti | Full Stack Developer | React & Node.js Expert</title>
 	<meta
 		name="description"
-		content="Looking for a Full Stack Dev? I build scalable web apps using React & Node.js. Passionate about SaaS & Agile environments. See my portfolio & let's connect!"
+		content="Junior Full Stack Developer specialized in MERN/PERN stack. Building high-performance, scalable web applications with a focus on UX and clean code."
 	/>
-	
 </svelte:head>
 
 <div class="min-h-screen">
