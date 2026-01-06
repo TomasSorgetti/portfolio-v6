@@ -8,7 +8,7 @@
 	import Discord from '../../assets/images/discord.png';
 </script>
 
-<AccessibleSection label="Beyond the Terminal section">
+<AccessibleSection id="who-i-am" label="Beyond the Terminal section">
 	<div class="lg:my-20">
 		<h2 class="text-[2rem] font-bold md:text-[2.5rem] lg:text-5xl">
 			Problem Solving Beyond Syntax

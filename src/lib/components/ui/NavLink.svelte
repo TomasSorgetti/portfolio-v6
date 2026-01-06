@@ -1,10 +1,10 @@
 <script>
-	let { href = '#', label = '', ...attributes } = $props();
+	let { href = '#', label = '', active, ...attributes } = $props();
 </script>
 
 <a
 	{href}
-	class="block px-4 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+	class={`block px-4 py-2 hover:text-white ${active ? 'text-white' : 'text-font-secondary'}`}
 	{...attributes}
 >
 	{label}

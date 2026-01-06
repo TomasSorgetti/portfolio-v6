@@ -4,6 +4,7 @@
 </script>
 
 <section
+	id="what-i-do"
 	class="py-4 -translate-y-10"
 	aria-labelledby="features-title"
 	data-label="features-section"

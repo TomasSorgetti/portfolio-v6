@@ -45,7 +45,11 @@
 	};
 </script>
 
-<section class="container max-w-7xl mx-auto py-32 px-4 xl:px-0" aria-labelledby="portfolio-heading">
+<section
+	id="my-work"
+	class="container max-w-7xl mx-auto py-32 px-4 xl:px-0"
+	aria-labelledby="portfolio-heading"
+>
 	<h2 id="portfolio-heading" class="text-5xl md:text-8xl font-bold">
 		Featured Engineering Projects
 	</h2>

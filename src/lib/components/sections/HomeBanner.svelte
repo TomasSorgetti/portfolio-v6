@@ -37,13 +37,15 @@
 		<div
 			class="text-left pt-0 pr-4 pb-40 pl-12 sm:pt-0 sm:px-8 sm:pb-40 md:pr-16 lg:max-w-150 xl:max-w-175"
 		>
-			<p class="text-xl font-thin lg:text-2xl">Hi, I'm Tomás — Full Stack Developer</p>
+			<p class="text-xl font-thin text-font-secondary lg:text-2xl">
+				Hi, I'm Tomás — Full Stack Developer
+			</p>
 
 			<h1 id="hero-heading" class="text-[2rem] font-black mb-4 lg:text-5xl lg:mt-2">
 				Building High-Performance Web Apps for the Modern Web
 			</h1>
 
-			<p class="text-base font-thin mb-4 max-w-lg leading-relaxed xl:max-w-125">
+			<p class="text-base text-font-secondary font-thin mb-4 max-w-lg leading-relaxed xl:max-w-125">
 				I bridge the gap between complex backend logic and intuitive frontend experiences.
 				Specialized in JavaScript, performance optimization, and clean, maintainable code.
 			</p>
