@@ -64,7 +64,7 @@
 		role="list"
 	>
 		{#each cards as card (card.title)}
-			<li>
+			<li class={`${card.variant === 'image' ? 'md:col-span-2' : ''}`}>
 				{#if card.variant === 'image'}
 					<InfoCardWithImage
 						title={card.title}
@@ -75,7 +75,7 @@
 							<button
 								type="button"
 								class="mt-8 py-3 px-6 bg-white text-font-invert font-bold rounded-full cursor-pointer"
-								aria-label="Download resume"
+								aria-describedby="resume-desc"
 							>
 								Download Resume
 							</button>

@@ -4,21 +4,25 @@
 
 	type Feature = {
 		number: string;
+		title: string;
 		text: string;
 	};
 
 	const features: Feature[] = [
 		{
 			number: '01.',
-			text: 'From Design to Code. I translate Figma prototypes into pixel-perfect, accessible interfaces, ensuring design fidelity and seamless transitions.'
+			title: 'From Design to Code.',
+			text: 'I translate Figma prototypes into pixel-perfect, accessible interfaces, ensuring design fidelity and seamless transitions.'
 		},
 		{
 			number: '02.',
-			text: 'Performance-First Frontend. Building with React & Next.js focused on Core Web Vitals, SEO, and component modularity for long-term scalability.'
+			title: 'Performance-First Frontend.',
+			text: 'Building with React & Next.js focused on Core Web Vitals, SEO, and component modularity for long-term scalability.'
 		},
 		{
 			number: '03.',
-			text: 'Solid Server-Side Logic. Developing secure RESTful APIs with Node.js and PostgreSQL, prioritizing data integrity and system reliability.'
+			title: 'Solid Server-Side Logic.',
+			text: 'Developing secure RESTful APIs with Node.js and PostgreSQL, prioritizing data integrity and system reliability.'
 		}
 	];
 </script>
@@ -28,7 +32,7 @@
 		class="w-full max-w-5xl mx-auto bg-card-background rounded-2xl p-8 relative border border-border md:pl-50 lg:py-16 pr-24 pl-50"
 	>
 		<div
-			class="hidden absolute top-0 left-0 h-full w-50 overflow-hidden rounded-2xl md:flex md:justify-center md:items-center"
+			class="hidden absolute top-0 left-0 h-full w-50 overflow-hidden rounded-2xl md:flex"
 			aria-hidden="true"
 		>
 			<img
@@ -36,7 +40,7 @@
 				alt=""
 				draggable="false"
 				loading="lazy"
-				class="h-full aspect-square -translate-x-20 animate-spin-slow"
+				class="h-full w-full object-cover object-right animate-spin-slow -translate-x-20 scale-120"
 			/>
 		</div>
 
@@ -51,9 +55,7 @@
 
 			<ul class="flex flex-col items-start gap-4 lg:flex-row lg:gap-12" role="list">
 				{#each features as feature (feature.number)}
-					<li>
-						<FeatureItem number={feature.number} text={feature.text} />
-					</li>
+					<FeatureItem number={feature.number} title={feature.title} text={feature.text} />
 				{/each}
 			</ul>
 		</article>

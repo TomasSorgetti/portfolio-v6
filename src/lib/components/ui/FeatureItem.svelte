@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let number: string;
+	export let title: string;
 	export let text: string;
 </script>
 
@@ -8,7 +9,8 @@
 		{number}
 	</span>
 
-	<p class="font-thin">
+	<h3 class="text-white font-semibold text-xl max-w-40">{title}</h3>
+	<p class="font-thin text-base">
 		{text}
 	</p>
 </li>

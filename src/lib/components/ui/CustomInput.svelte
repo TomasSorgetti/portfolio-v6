@@ -31,6 +31,7 @@
 			{type}
 			{name}
 			{placeholder}
+			autocomplete={type === 'email' ? 'email' : undefined}
 			class={`border rounded-xl bg-black/60 w-full h-12 p-2 ${
 				error ? 'border-red-500 text-red-500' : 'border-border text-white'
 			}`}
