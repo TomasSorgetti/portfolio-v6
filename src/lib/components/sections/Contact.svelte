@@ -17,6 +17,8 @@
 	let message = '';
 	let errors: FieldErrors = {};
 	let isSubmitting = false;
+	let isSuccess = false;
+	let isError = false;
 
 	function validateEmail(value: string): boolean {
 		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -59,21 +61,40 @@
 		return Object.keys(errors).length === 0;
 	}
 
-	function handleSubmit(event: Event): void {
+	async function handleSubmit(event: Event): Promise<void> {
 		event.preventDefault();
 
-		if (!validateForm()) {
-			return;
-		}
+		if (!validateForm()) return;
 
 		isSubmitting = true;
+		isError = false;
+		isSuccess = false;
 
-		setTimeout(() => {
-			isSubmitting = false;
+		try {
+			const response = await fetch('/api/send-email', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email, message })
+			});
+
+			const result = await response.json();
+
+			if (!response.ok || !result.success) {
+				throw new Error();
+			}
+
 			email = '';
 			message = '';
 			errors = {};
-		}, 2000);
+
+			isSuccess = true;
+			setTimeout(() => (isSuccess = false), 3000);
+		} catch {
+			isError = true;
+			setTimeout(() => (isError = false), 3000);
+		} finally {
+			isSubmitting = false;
+		}
 	}
 </script>
 
@@ -146,6 +167,8 @@
 				type="submit"
 				disabled={isSubmitting || Object.keys(errors).length > 0}
 				isLoading={isSubmitting}
+				success={isSuccess}
+				error={isError}
 			>
 				Send email
 			</FormButton>
