@@ -3,15 +3,15 @@
 	import HeroVideo from '../../assets/videos/hero.mp4';
 	import MainButton from '../ui/MainButton.svelte';
 
-	let videoElement = $state<HTMLVideoElement | null>(null);
-	let isVideoPaused = $state<boolean>(false);
+	let videoElement: HTMLVideoElement | null = null;
+	let isMotionReduced = false;
 
 	onMount(() => {
-		const mediaQuery: MediaQueryList = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		isMotionReduced = prefersReducedMotion.matches;
 
-		if (mediaQuery.matches && videoElement) {
+		if (isMotionReduced && videoElement) {
 			videoElement.pause();
-			isVideoPaused = true;
 		}
 	});
 </script>
@@ -24,7 +24,7 @@
 		<video
 			bind:this={videoElement}
 			src={HeroVideo}
-			autoplay
+			autoplay={!isMotionReduced}
 			loop
 			muted
 			playsinline
@@ -34,7 +34,7 @@
 	</div>
 
 	<div class="w-full h-full p-4 max-w-7xl mx-auto flex items-end justify-end">
-		<div
+		<article
 			class="text-left pt-0 pr-4 pb-40 pl-12 sm:pt-0 sm:px-8 sm:pb-40 md:pr-16 lg:max-w-150 xl:max-w-175"
 		>
 			<p class="text-xl font-thin text-font-secondary lg:text-2xl">
@@ -53,6 +53,6 @@
 			<div class="pt-4 flex flex-wrap items-center gap-4">
 				<MainButton href="#my-work" label="View My Work" />
 			</div>
-		</div>
+		</article>
 	</div>
 </section>

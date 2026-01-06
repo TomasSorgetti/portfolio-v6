@@ -1,5 +1,18 @@
-<script>
-	let { id, backgroundImage = null, label, children, ...attributes } = $props();
+<script lang="ts">
+	type AccessibleSectionProps = {
+		id?: string;
+		label: string;
+		backgroundImage?: string | null;
+		children: any;
+	} & Record<string, unknown>;
+
+	const {
+		id,
+		label,
+		backgroundImage = null,
+		children,
+		...attributes
+	}: AccessibleSectionProps = $props();
 </script>
 
 <section

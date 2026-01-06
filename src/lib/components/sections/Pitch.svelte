@@ -3,9 +3,14 @@
 	import DesignIcon from '../../assets/icons/design.png';
 	import ArchitectureIcon from '../../assets/icons/architecture.png';
 	import MindsetIcon from '../../assets/icons/mindset.png';
-	import VisualIcon from '../../assets/icons/visual.png';
 
-	const reasonList = [
+	type TeamFitReason = {
+		title: string;
+		description: string;
+		icon: string;
+	};
+
+	const teamFitReasons: TeamFitReason[] = [
 		{
 			title: 'Clean & Maintainable Code',
 			description:
@@ -28,14 +33,20 @@
 </script>
 
 <section
+	aria-labelledby="team-fit-heading"
 	class="text-center bg-center bg-no-repeat bg-cover flex flex-col items-center md:grid-cols-2 lg:justify-start lg:my-30"
 >
-	<h2 class="text-xl font-bold md:text-4xl lg:max-w-3xl lg:text-6xl lg:leading-18">
-		Why I’m a Great Fit for Your Engineering Team
-	</h2>
+	<header>
+		<h2
+			id="team-fit-heading"
+			class="text-xl font-bold md:text-4xl lg:max-w-3xl lg:text-6xl lg:leading-18"
+		>
+			Why I’m a Great Fit for Your Engineering Team
+		</h2>
+	</header>
 
-	<ul class="mt-16 grid grid-cols-1 gap-4 p-4 md:grid-cols-3 lg:mt-16">
-		{#each reasonList as reason}
+	<ul class="mt-16 grid grid-cols-1 gap-4 p-4 md:grid-cols-3 lg:mt-16" role="list">
+		{#each teamFitReasons as reason (reason.title)}
 			<li>
 				<TeamCard title={reason.title} description={reason.description} icon={reason.icon} />
 			</li>

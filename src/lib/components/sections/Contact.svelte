@@ -8,64 +8,57 @@
 	import WhatsappIcon from '../../assets/icons/whatsapp.svg';
 	import Background from '../../assets/videos/contact.mp4';
 
-	type FieldErrors = {
-		email?: string;
-		message?: string;
+	type ContactFormValues = {
+		email: string;
+		message: string;
 	};
 
-	let email = '';
-	let message = '';
-	let errors: FieldErrors = {};
+	type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>;
+
+	let formValues: ContactFormValues = {
+		email: '',
+		message: ''
+	};
+
+	let formErrors: ContactFormErrors = {};
 	let isSubmitting = false;
 	let isSuccess = false;
 	let isError = false;
 
-	function validateEmail(value: string): boolean {
-		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+	function getEmailError(value: string): string | null {
+		if (!value.trim()) return 'Email is required';
+		if (!emailPattern.test(value)) return 'Email format is invalid';
+		return null;
 	}
 
-	function validateEmailField(): void {
-		if (!email.trim()) {
-			errors = { ...errors, email: 'Email is required' };
-			return;
-		}
-
-		if (!validateEmail(email)) {
-			errors = { ...errors, email: 'Email format is invalid' };
-			return;
-		}
-
-		const { email: _removed, ...rest } = errors;
-		errors = rest;
+	function getMessageError(value: string): string | null {
+		if (!value.trim()) return 'Message is required';
+		if (value.trim().length < 10) return 'Message must have at least 10 characters';
+		return null;
 	}
 
-	function validateMessageField(): void {
-		if (!message.trim()) {
-			errors = { ...errors, message: 'Message is required' };
+	function validateField<K extends keyof ContactFormValues>(field: K): void {
+		const value = formValues[field];
+		const error = field === 'email' ? getEmailError(value) : getMessageError(value);
+
+		if (error) {
+			formErrors = { ...formErrors, [field]: error };
 			return;
 		}
 
-		if (message.trim().length < 10) {
-			errors = { ...errors, message: 'Message must have at least 10 caracters' };
-			return;
-		}
-
-		const { message: _removed, ...rest } = errors;
-		errors = rest;
+		const { [field]: _removed, ...rest } = formErrors;
+		formErrors = rest;
 	}
 
 	function validateForm(): boolean {
-		validateEmailField();
-		validateMessageField();
-
-		return Object.keys(errors).length === 0;
+		validateField('email');
+		validateField('message');
+		return Object.keys(formErrors).length === 0;
 	}
 
-	async function handleSubmit(event: Event): Promise<void> {
-		event.preventDefault();
-
-		if (!validateForm()) return;
-
+	async function submitContactForm(): Promise<void> {
 		isSubmitting = true;
 		isError = false;
 		isSuccess = false;
@@ -74,19 +67,17 @@
 			const response = await fetch('/api/send-email', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, message })
+				body: JSON.stringify(formValues)
 			});
 
 			const result = await response.json();
 
-			if (!response.ok || !result.success) {
+			if (!response.ok || !result?.success) {
 				throw new Error();
 			}
 
-			email = '';
-			message = '';
-			errors = {};
-
+			formValues = { email: '', message: '' };
+			formErrors = {};
 			isSuccess = true;
 			setTimeout(() => (isSuccess = false), 3000);
 		} catch {
@@ -96,45 +87,61 @@
 			isSubmitting = false;
 		}
 	}
+
+	async function handleSubmit(event: Event): Promise<void> {
+		event.preventDefault();
+		if (!validateForm()) return;
+		await submitContactForm();
+	}
+
+	function hasErrors(): boolean {
+		return Object.keys(formErrors).length > 0;
+	}
 </script>
 
 <section id="contact" class="relative overflow-hidden py-20 bg-linear-180 from-black to-black/30">
 	<div class="mx-auto max-w-5xl flex justify-center gap-12 my-20">
-		<div>
-			<h2 class="text-4xl font-bold max-w-md">Let’s Build Something That Works</h2>
+		<article>
+			<header>
+				<h2 class="text-4xl font-bold max-w-md">Let’s Build Something That Works</h2>
+			</header>
+
 			<p class="max-w-md text-font-secondary mt-4">
 				I’m a junior full stack web developer focused on building clean, functional, and
 				user-friendly digital experiences.
 			</p>
+
 			<p class="max-w-md text-font-secondary mt-2">
 				If you have an idea, a project, or just want to connect, I’d love to hear from you.
 			</p>
-			<div class="flex items-center justify-start gap-4 mt-4">
-				<a href="/#">
+
+			<nav class="flex items-center justify-start gap-4 mt-4" aria-label="Social links">
+				<a href="/#" aria-label="GitHub profile">
 					<img src={GithubIcon} alt="" />
 				</a>
-				<a href="/#">
+				<a href="/#" aria-label="LinkedIn profile">
 					<img src={LinkedinIcon} alt="" />
 				</a>
-				<a href="/#">
+				<a href="/#" aria-label="Discord contact">
 					<img src={DiscordIcon} alt="" />
 				</a>
-				<a href="/#">
+				<a href="/#" aria-label="Telegram contact">
 					<img src={TelegramIcon} alt="" />
 				</a>
-				<a href="/#">
+				<a href="/#" aria-label="WhatsApp contact">
 					<img src={WhatsappIcon} alt="" />
 				</a>
-			</div>
+			</nav>
+
 			<small class="max-w-md text-font-secondary mt-4 block">
 				Open to freelance projects, junior positions, and collaborations.
 			</small>
-		</div>
+		</article>
 
 		<form
 			class="max-w-sm w-full space-y-4"
 			novalidate
-			aria-describedby="contact-form-errors"
+			aria-describedby="contact-form-status"
 			on:submit={handleSubmit}
 		>
 			<CustomInput
@@ -144,10 +151,10 @@
 				hasLabel={false}
 				placeholder="Your email..."
 				name="email"
-				bind:value={email}
-				error={errors.email}
+				bind:value={formValues.email}
+				error={formErrors.email}
 				required
-				on:blur={validateEmailField}
+				on:blur={() => validateField('email')}
 			/>
 
 			<CustomInput
@@ -157,15 +164,15 @@
 				hasLabel={false}
 				placeholder="Your message..."
 				name="message"
-				bind:value={message}
-				error={errors.message}
+				bind:value={formValues.message}
+				error={formErrors.message}
 				required
-				on:blur={validateMessageField}
+				on:blur={() => validateField('message')}
 			/>
 
 			<FormButton
 				type="submit"
-				disabled={isSubmitting || Object.keys(errors).length > 0}
+				disabled={isSubmitting || hasErrors()}
 				isLoading={isSubmitting}
 				success={isSuccess}
 				error={isError}
@@ -173,13 +180,21 @@
 				Send email
 			</FormButton>
 
-			<div id="contact-form-errors" class="sr-only" aria-live="assertive">
-				{#each Object.values(errors) as errorMessage}
+			<div id="contact-form-status" class="sr-only" aria-live="assertive">
+				{#each Object.values(formErrors) as errorMessage}
 					<span>{errorMessage}</span>
 				{/each}
+				{#if isSuccess}
+					<span>Message sent successfully</span>
+				{/if}
+				{#if isError}
+					<span>There was an error sending the message</span>
+				{/if}
 			</div>
+
 			<small class="text-font-secondary text-center block">
-				Or email me directly at <a href="mailto:6YH0e@example.com" class="underline">
+				Or email me directly at
+				<a href="mailto:tomassorgetti456@gmail.com" class="underline">
 					tomassorgetti456@gmail.com
 				</a>
 			</small>
