@@ -29,4 +29,10 @@
 		enablePrefetch={false}
 		class="w-full"
 	/>
+
+	<LazyVisible
+		componentLoader={() => import('$lib/components/sections/Contact.svelte')}
+		enablePrefetch={false}
+		class="w-full"
+	/>
 </main>
