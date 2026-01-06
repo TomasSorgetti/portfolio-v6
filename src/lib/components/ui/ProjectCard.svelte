@@ -17,6 +17,7 @@
 	export let link: string | undefined = undefined;
 	export let containerClass: string = '';
 	export let contentClass: string = '';
+	export let headingClass: string = '';
 	export let imageClass: string = '';
 </script>
 
@@ -24,7 +25,7 @@
 	<a href={link} target="_blank" rel="noopener noreferrer" class="w-full h-full">
 		<figure class="h-full w-full relative m-0">
 			<figcaption class="z-10 {contentClass}">
-				<h3 class="font-bold text-2xl">
+				<h3 class="font-bold text-2xl {headingClass}">
 					{title}
 				</h3>
 				<p class="mt-2 text-font-secondary text-sm md:text-base">

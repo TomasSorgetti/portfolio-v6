@@ -99,7 +99,10 @@
 	}
 </script>
 
-<section id="contact" class="relative overflow-hidden py-20 bg-linear-180 from-black to-black/30">
+<section
+	id="contact"
+	class="relative overflow-hidden py-20 bg-linear-180 from-black to-black/30 xl:mt-32"
+>
 	<div class="mx-auto max-w-5xl flex justify-center gap-12 my-20">
 		<article>
 			<header>

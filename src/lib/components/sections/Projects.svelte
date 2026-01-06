@@ -64,14 +64,14 @@
 	aria-labelledby="portfolio-heading"
 >
 	<header>
-		<h2 id="portfolio-heading" class="text-5xl md:text-8xl font-bold">
+		<h2 id="portfolio-heading" class="text-5xl text-center font-bold">
 			Featured Engineering Projects
 		</h2>
 	</header>
 
-	<ul class="relative flex items-start gap-4 mt-16">
-		<li class="relative flex flex-col gap-4 h-150 lg:flex-row w-full">
-			<div class="relative flex flex-col gap-4 md:flex-row lg:w-3/4">
+	<div class="relative flex items-start gap-4 mt-16">
+		<div class="relative flex flex-col gap-4 w-full lg:max-w-3/4 lg:mx-auto">
+			<div class="relative flex flex-col items-end gap-4 md:flex-row lg:mt-16">
 				<div class="relative h-full aspect-square">
 					<SeeAllLink profileUrl={GITHUB_PROFILE_URL} />
 
@@ -88,7 +88,7 @@
 				</div>
 
 				<div
-					class="relative h-full flex flex-col items-end gap-8 -translate-y-75 md:translate-0 lg:w-1/3"
+					class="relative h-full flex flex-col items-end gap-8 -translate-y-75 md:translate-0 lg:w-1/3 lg:gap-16"
 				>
 					<div class="contents">
 						<ProjectCard
@@ -116,7 +116,7 @@
 				</div>
 			</div>
 
-			<div class="h-full w-full -translate-y-75 md:translate-0 lg:w-1/4">
+			<div class="h-100 w-full mt-6">
 				<ProjectCard
 					title={projects.iEscrow.title}
 					description={projects.iEscrow.description}
@@ -124,9 +124,10 @@
 					imageAlt={projects.iEscrow.imageAlt}
 					link={projects.iEscrow.link}
 					containerClass="w-full border-[0.12rem] border-border rounded-4xl h-full"
-					contentClass="absolute p-8 top-0 left-0 lg:max-w-xs"
+					contentClass="absolute p-8 top-10 left-4 lg:top-12 lg:max-w-md"
+					headingClass="lg:text-4xl"
 				/>
 			</div>
-		</li>
-	</ul>
+		</div>
+	</div>
 </section>

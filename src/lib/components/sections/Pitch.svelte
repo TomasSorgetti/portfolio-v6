@@ -34,7 +34,7 @@
 
 <section
 	aria-labelledby="team-fit-heading"
-	class="text-center bg-center bg-no-repeat bg-cover flex flex-col items-center md:grid-cols-2 lg:justify-start lg:my-30"
+	class="text-center bg-center bg-no-repeat bg-cover flex flex-col items-center md:grid-cols-2 lg:justify-start lg:my-10"
 >
 	<header>
 		<h2
