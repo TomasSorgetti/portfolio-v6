@@ -1,9 +1,10 @@
 <script lang="ts">
-	import NodeNetwork from './NodeNetwork.svelte';
+	import AnimatedSVG from './AnimatedSVG.svelte';
 	import RocketIcon from './RocketIcon.svelte';
 
 	export let title: string;
 	export let content: string;
+	export let leyend: string;
 	export let type: 'rocket' | 'default' = 'default';
 
 	const headingId = title
@@ -14,16 +15,18 @@
 
 <article
 	aria-labelledby={`${headingId}-heading`}
-	class="relative bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-border pb-75 md:min-h-75 md:pb-12 md:flex md:justify-between md:gap-4"
+	class="relative bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-border pb-75 md:min-h-78 md:pb-8 md:flex md:justify-between md:gap-4"
 >
 	<div>
-		<h3 id={`${headingId}-heading`} class="font-semibold mb-4 text-2xl lg:text-[2rem]">
+		<h3 id={`${headingId}-heading`} class="font-semibold mb-2 text-2xl lg:text-[2rem]">
 			{title}
 		</h3>
 
-		<p class="font-light md:max-w-xs text-font-secondary">
+		<p class="font-light md:max-w-xs text-font-secondary text-md mt-6">
 			{content}
 		</p>
+
+		<small class="text-sm italic mt-4 block max-w-75">{leyend}</small>
 
 		<slot />
 	</div>
@@ -35,7 +38,7 @@
 		{#if type === 'rocket'}
 			<RocketIcon />
 		{:else}
-			<NodeNetwork />
+			<AnimatedSVG />
 		{/if}
 	</div>
 </article>

@@ -53,7 +53,7 @@
 
 			<div class="w-full h-px bg-primary my-8 lg:my-12" role="presentation"></div>
 
-			<ul class="flex flex-col items-start gap-4 lg:flex-row lg:gap-12" role="list">
+			<ul class="flex flex-col items-start gap-4 lg:flex-row lg:gap-6" role="list">
 				{#each features as feature (feature.number)}
 					<FeatureItem number={feature.number} title={feature.title} text={feature.text} />
 				{/each}

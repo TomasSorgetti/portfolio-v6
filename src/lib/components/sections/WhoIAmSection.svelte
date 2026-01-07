@@ -7,6 +7,7 @@
 		variant: 'image';
 		title: string;
 		content: string;
+		leyend: string;
 		type?: 'rocket' | 'default';
 	};
 
@@ -14,6 +15,7 @@
 		variant: 'default';
 		title: string;
 		content: string;
+		leyend: string;
 	};
 
 	type CardContent = ImageCard | DefaultCard;
@@ -23,25 +25,30 @@
 			variant: 'image',
 			title: 'Design-Driven Logic',
 			content:
-				"My background in design isn't just about aesthetics; it’s about understanding user behavior to write better functional requirements."
+				"My background in design isn't just about aesthetics; it’s about understanding user behavior to write better functional requirements.",
+			leyend: 'Figma-to-Code: Pixel-perfect UI & Design Systems.',
+			type: 'default'
 		},
 		{
 			variant: 'default',
 			title: 'User-Centric Engineering',
 			content:
-				'I write code that solves problems. Every function and component is built with the end-user’s experience in mind.'
+				'I write code that solves problems. Every function and component is built with the end-user’s experience in mind.',
+			leyend: 'UX: Accessibility, Performance & User Flows.'
 		},
 		{
 			variant: 'default',
 			title: 'Continuous Iteration',
 			content:
-				'Tech evolves, and so does my stack. I’m currently deep-diving into TypeScript and Unit Testing to improve delivery quality.'
+				'Tech evolves, and so does my stack. I’m currently deep-diving into TypeScript and Unit Testing to improve delivery quality.',
+			leyend: 'Learning: TypeScript, Testing & Clean Code.'
 		},
 		{
 			variant: 'image',
 			title: 'Agile & Team-Ready',
 			content:
 				'I thrive in collaborative environments, using Git-flow and agile methodologies to contribute effectively from day one.',
+			leyend: 'DevOps: Git-flow, Agile & Team Collaboration.',
 			type: 'rocket'
 		}
 	];
@@ -69,12 +76,13 @@
 					<InfoCardWithImage
 						title={card.title}
 						content={card.content}
+						leyend={card.leyend}
 						type={card.type ?? 'default'}
 					>
 						{#if card.type === 'rocket'}
 							<button
 								type="button"
-								class="mt-8 py-3 px-6 bg-white text-font-invert font-bold rounded-full cursor-pointer"
+								class="mt-4 py-3 px-6 bg-white text-font-invert font-bold rounded-full cursor-pointer"
 								aria-describedby="resume-desc"
 							>
 								Download Resume
@@ -82,7 +90,7 @@
 						{/if}
 					</InfoCardWithImage>
 				{:else}
-					<InfoCard title={card.title} content={card.content} />
+					<InfoCard title={card.title} content={card.content} leyend={card.leyend} />
 				{/if}
 			</li>
 		{/each}

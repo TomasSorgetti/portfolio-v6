@@ -177,8 +177,8 @@
 				type="submit"
 				disabled={isSubmitting || hasErrors()}
 				isLoading={isSubmitting}
-				success={isSuccess}
-				error={isError}
+				{isSuccess}
+				{isError}
 			>
 				Send email
 			</FormButton>
