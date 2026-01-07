@@ -9,10 +9,10 @@
 
 <article
 	aria-labelledby={headingId}
-	class="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-border md:min-h-78"
+	class="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-border text-center md:min-h-78 md:text-left"
 	class:md:col-span-2={span}
 >
-	<h3 id={headingId} class="font-semibold mb-2 text-2xl lg:text-[2rem]">
+	<h3 id={headingId} class="font-semibold mb-6 text-2xl md:mb-2 lg:text-[2rem]">
 		{title}
 	</h3>
 
@@ -20,7 +20,7 @@
 		{content}
 	</p>
 
-	<small class="text-sm italic mt-3 block">{leyend}</small>
+	<small class="text-sm italic mt-6 block md:mt-3">{leyend}</small>
 
 	<slot />
 </article>

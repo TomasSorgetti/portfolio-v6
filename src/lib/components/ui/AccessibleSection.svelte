@@ -18,7 +18,7 @@
 <section
 	{id}
 	aria-label={label}
-	class="w-full px-16 py-4 bg-cover bg-center bg-no-repeat text-center"
+	class="w-full px-4 py-4 bg-cover bg-center bg-no-repeat text-center sm:px-16"
 	style:background-image={backgroundImage ? `url('${backgroundImage}')` : undefined}
 	{...attributes}
 >

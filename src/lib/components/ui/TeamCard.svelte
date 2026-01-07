@@ -14,7 +14,7 @@
 	</figure>
 
 	<header>
-		<h3 id="card-title" class="font-semibold my-4 text-2xl">
+		<h3 id="card-title" class="font-semibold mb-4 text-2xl">
 			{title}
 		</h3>
 	</header>

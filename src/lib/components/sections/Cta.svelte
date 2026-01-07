@@ -3,14 +3,14 @@
 </script>
 
 <section
-	class="py-32 bg-cover bg-center bg-no-repeat"
+	class="px-4 py-16 bg-cover bg-center bg-no-repeat lg:py-32"
 	style="background-image: url('/images/cta_bg.png')"
 >
 	<div
-		class="max-w-5xl mx-auto border border-border rounded-2xl bg-black/60 backdrop-blur-md px-20 py-24 flex gap-2 items-center justify-between"
+		class="max-w-5xl text-center mx-auto border border-border rounded-2xl bg-black/60 backdrop-blur-md px-8 py-12 flex flex-col-reverse gap-16 items-center justify-between lg:flex-row lg:text-left lg:px-20 lg:py-24"
 	>
-		<div class="flex flex-col gap-2 items-start">
-			<h2 class="font-bold text-5xl">Validation & Open Source</h2>
+		<div class="flex flex-col gap-2 items-center lg:items-start">
+			<h2 class="font-bold text-3xl lg:text-5xl">Validation & Open Source</h2>
 			<p class="mt-4 text-font-secondary max-w-sm">
 				I don't just build products; I maintain clean, documented, and collaborative code. Explore
 				my workflow firsthand.

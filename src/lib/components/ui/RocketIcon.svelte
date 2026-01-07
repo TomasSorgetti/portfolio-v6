@@ -59,7 +59,7 @@
 	<svg
 		bind:this={rocket}
 		viewBox="0 0 550 505"
-		class="w-40 md:w-56"
+		class="w-60 md:w-56 lg:w-60"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>

@@ -103,7 +103,9 @@
 	id="contact"
 	class="relative overflow-hidden py-20 bg-linear-180 from-black to-black/30 xl:mt-10"
 >
-	<div class="mx-auto max-w-5xl flex justify-center gap-12 my-20">
+	<div
+		class="px-4 mx-auto max-w-5xl flex flex-col items-center justify-center text-center gap-12 my-20 lg:text-left lg:flex-row lg:items-start"
+	>
 		<article>
 			<header>
 				<h2 class="text-4xl font-bold max-w-md">Let’s Build Something That Works</h2>
@@ -118,7 +120,10 @@
 				If you have an idea, a project, or just want to connect, I’d love to hear from you.
 			</p>
 
-			<nav class="flex items-center justify-start gap-4 mt-4" aria-label="Social links">
+			<nav
+				class="flex items-center justify-center gap-4 mt-4 lg:justify-start"
+				aria-label="Social links"
+			>
 				<a href="/#" aria-label="GitHub profile">
 					<img src={GithubIcon} alt="" />
 				</a>

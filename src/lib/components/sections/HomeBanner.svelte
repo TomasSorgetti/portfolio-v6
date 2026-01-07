@@ -16,7 +16,10 @@
 	});
 </script>
 
-<section aria-labelledby="hero-heading" class="relative min-h-screen flex items-end justify-end">
+<section
+	aria-labelledby="hero-heading"
+	class="relative h-screen flex items-end justify-end lg:h-[95vh]"
+>
 	<div
 		class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 bg-gray-900"
 		aria-hidden="true"

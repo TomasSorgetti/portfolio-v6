@@ -34,18 +34,18 @@
 
 <section
 	aria-labelledby="team-fit-heading"
-	class="text-center bg-center bg-no-repeat bg-cover flex flex-col items-center md:grid-cols-2 lg:justify-start lg:my-10"
+	class="text-center p-4 bg-center bg-no-repeat bg-cover flex flex-col items-center md:grid-cols-2 lg:justify-start lg:my-10"
 >
 	<header>
 		<h2
 			id="team-fit-heading"
-			class="text-xl font-bold md:text-4xl lg:max-w-3xl lg:text-6xl lg:leading-18"
+			class="text-4xl font-bold md:text-5xl lg:max-w-3xl lg:text-6xl lg:leading-18"
 		>
 			Why I’m a Great Fit for Your Engineering Team
 		</h2>
 	</header>
 
-	<ul class="mt-16 grid grid-cols-1 gap-4 p-4 md:grid-cols-3 lg:mt-16" role="list">
+	<ul class="grid grid-cols-1 p-4 md:grid-cols-3 lg:gap-4 lg:mt-16" role="list">
 		{#each teamFitReasons as reason (reason.title)}
 			<li>
 				<TeamCard title={reason.title} description={reason.description} icon={reason.icon} />

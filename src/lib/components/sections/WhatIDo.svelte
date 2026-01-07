@@ -27,9 +27,9 @@
 	];
 </script>
 
-<section id="what-i-do" class="py-4 -translate-y-10" aria-labelledby="features-title">
+<section id="what-i-do" class="py-4 -translate-y-10 px-4" aria-labelledby="features-title">
 	<div
-		class="w-full max-w-5xl mx-auto bg-card-background rounded-2xl p-8 relative border border-border md:pl-50 lg:py-16 pr-24 pl-50"
+		class="w-full max-w-5xl mx-auto bg-card-background rounded-2xl p-8 relative border border-border text-center md:text-left md:pr-24 md:pl-50 lg:py-16"
 	>
 		<div
 			class="hidden absolute top-0 left-0 h-full w-50 overflow-hidden rounded-2xl md:flex"
@@ -53,7 +53,7 @@
 
 			<div class="w-full h-px bg-primary my-8 lg:my-12" role="presentation"></div>
 
-			<ul class="flex flex-col items-start gap-4 lg:flex-row lg:gap-6" role="list">
+			<ul class="flex flex-col items-center gap-4 lg:flex-row lg:gap-6 lg:items-start" role="list">
 				{#each features as feature (feature.number)}
 					<FeatureItem number={feature.number} title={feature.title} text={feature.text} />
 				{/each}

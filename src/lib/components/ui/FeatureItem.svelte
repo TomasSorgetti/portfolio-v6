@@ -9,8 +9,8 @@
 		{number}
 	</span>
 
-	<h3 class="text-white font-semibold text-xl max-w-40">{title}</h3>
-	<p class="font-thin text-base">
+	<h3 class="text-white font-semibold text-xl md:max-w-40">{title}</h3>
+	<p class="font-thin text-base max-w-sm">
 		{text}
 	</p>
 </li>
