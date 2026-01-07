@@ -18,7 +18,7 @@
 
 <section
 	aria-labelledby="hero-heading"
-	class="relative h-screen flex items-end justify-end lg:h-[95vh]"
+	class="relative h-[80vh] flex items-end justify-end lg:h-[95vh]"
 >
 	<div
 		class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 bg-gray-900"
@@ -36,15 +36,17 @@
 		></video>
 	</div>
 
-	<div class="w-full h-full p-4 max-w-7xl mx-auto flex items-end justify-end">
+	<div
+		class="w-full h-full p-4 max-w-7xl mx-auto flex items-center justify-center text-center lg:items-end lg:justify-end lg:text-left"
+	>
 		<article
-			class="text-left pt-0 pr-4 pb-40 pl-12 sm:pt-0 sm:px-8 sm:pb-40 md:pr-16 lg:max-w-150 xl:max-w-175"
+			class="flex flex-col items-center max-w-lg md:max-w-xl lg:items-start lg:pb-20 lg:max-w-150 xl:max-w-175"
 		>
 			<p class="text-xl font-thin text-font-secondary lg:text-2xl">
 				Hi, I'm Tomás — Full Stack Developer
 			</p>
 
-			<h1 id="hero-heading" class="text-[2rem] font-black mb-4 lg:text-5xl lg:mt-2">
+			<h1 id="hero-heading" class="text-[2rem] md:text-4xl font-black mb-4 lg:text-5xl lg:mt-2">
 				Building High-Performance Web Apps for the Modern Web
 			</h1>
 
@@ -53,7 +55,7 @@
 				Specialized in JavaScript, performance optimization, and clean, maintainable code.
 			</p>
 
-			<div class="pt-4 flex flex-wrap items-center gap-4">
+			<div class="pt-4">
 				<MainButton href="#my-work" label="View My Work" />
 			</div>
 		</article>
