@@ -1,27 +1,24 @@
 <script lang="ts">
 	import { onMount, type Component, type Snippet } from 'svelte';
 
-	interface Props {
-		componentLoader: () => Promise<{ default: Component } | Component>;
+	type AnyComponent<P extends Record<string, any>> = Component<P> | { default: Component<P> };
+
+	interface Props<P extends Record<string, any> = Record<string, any>> {
+		componentLoader: () => Promise<AnyComponent<P>>;
 		fallback?: Snippet;
 		enablePrefetch?: boolean;
-		[key: string]: unknown;
+		componentProps?: P;
 	}
 
-	let {
-		componentLoader,
-		fallback,
-		enablePrefetch = true,
-		...containerAttributes
-	}: Props = $props();
+	let { componentLoader, fallback, enablePrefetch = true, componentProps }: Props = $props();
 
-	let LoadedComponent = $state<Component | null>(null);
+	let LoadedComponent = $state<Component<any> | null>(null);
 	let rootElement = $state<HTMLDivElement | null>(null);
 	let hasLoaded = $state(false);
 	let hasError = $state(false);
 
 	async function executeLoad() {
-		if (hasLoaded || !componentLoader) return;
+		if (hasLoaded) return;
 
 		try {
 			const module = await componentLoader();
@@ -43,40 +40,25 @@
 		if (!rootElement) return;
 
 		const observer = new IntersectionObserver(
-			(entries) => {
-				const [entry] = entries;
+			([entry]) => {
 				if (entry.isIntersecting) {
 					executeLoad();
 					observer.disconnect();
 				}
 			},
-			{
-				rootMargin: '200px',
-				threshold: 0.01
-			}
+			{ rootMargin: '200px', threshold: 0.01 }
 		);
 
 		observer.observe(rootElement);
-
 		return () => observer.disconnect();
 	});
 </script>
 
-<div
-	bind:this={rootElement}
-	onmouseenter={handlePrefetch}
-	onfocus={handlePrefetch}
-	aria-busy={!hasLoaded && !hasError}
-	aria-live="polite"
-	class="min-h-px w-full"
-	{...containerAttributes}
->
+<div bind:this={rootElement} class="min-h-px w-full">
 	{#if hasLoaded && LoadedComponent}
-		<LoadedComponent />
+		<LoadedComponent {...componentProps} />
 	{:else if hasError}
-		<div class="p-4 text-red-500 border border-red-200 bg-red-50 rounded" role="alert">
-			<p>Failed to load content.</p>
-		</div>
+		<div role="alert">Failed to load content.</div>
 	{:else}
 		{@render fallback?.()}
 	{/if}

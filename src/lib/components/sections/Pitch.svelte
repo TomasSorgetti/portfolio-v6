@@ -4,6 +4,10 @@
 	import ArchitectureIcon from '../../assets/icons/architecture.png';
 	import MindsetIcon from '../../assets/icons/mindset.png';
 
+	export let translations: any;
+
+	const { title, cards } = translations;
+
 	type TeamFitReason = {
 		title: string;
 		description: string;
@@ -12,21 +16,18 @@
 
 	const teamFitReasons: TeamFitReason[] = [
 		{
-			title: 'Clean & Maintainable Code',
-			description:
-				'I prioritize readability and documentation so the team can scale the project without friction.',
+			title: cards[1].title,
+			description: cards[1].content,
 			icon: DesignIcon
 		},
 		{
-			title: 'Full-Stack Autonomy',
-			description:
-				'Capable of handling everything from database schema design to frontend state management.',
+			title: cards[2].title,
+			description: cards[2].content,
 			icon: ArchitectureIcon
 		},
 		{
-			title: 'Proactive Communication',
-			description:
-				'I ask the right questions early to avoid technical debt and align with business goals.',
+			title: cards[3].title,
+			description: cards[3].content,
 			icon: MindsetIcon
 		}
 	];
@@ -41,7 +42,7 @@
 			id="team-fit-heading"
 			class="text-4xl font-bold md:text-5xl lg:max-w-3xl lg:text-6xl lg:leading-18"
 		>
-			Why I’m a Great Fit for Your Engineering Team
+			{title}
 		</h2>
 	</header>
 

@@ -2,6 +2,9 @@
 	import CustomInput from '../ui/CustomInput.svelte';
 	import FormButton from '../ui/FormButton.svelte';
 	import { ArrowRight } from '@lucide/svelte';
+	import type { Language } from '$lib/i18n/types';
+
+	const { language } = $props<{ language: Language }>();
 
 	type NavigationItem = {
 		href: string;

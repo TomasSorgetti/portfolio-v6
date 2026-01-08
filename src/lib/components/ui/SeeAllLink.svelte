@@ -14,7 +14,9 @@
 		class="text-xl group sm:text-4xl flex items-center text-left pointer-events-auto"
 		aria-label="Visit GitHub profile to see all projects"
 	>
-		<p class="max-w-24 sm:max-w-42">See all projects</p>
+		<p class="max-w-24 sm:max-w-42">
+			<slot />
+		</p>
 		<span
 			class="h-10 w-10 md:h-16 md:w-16 rounded-full border border-white flex items-center justify-center ml-2"
 			aria-hidden="true"

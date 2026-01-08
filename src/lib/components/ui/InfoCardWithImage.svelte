@@ -17,7 +17,7 @@
 	aria-labelledby={`${headingId}-heading`}
 	class="relative bg-black/60 backdrop-blur-md rounded-2xl p-8 pt-0 border flex flex-col-reverse border-border md:min-h-78 md:flex md:justify-between md:gap-4"
 >
-	<div class="text-center md:text-left">
+	<div class="text-center md:text-left relative z-20">
 		<h3 id={`${headingId}-heading`} class="font-semibold mb-2 text-2xl lg:text-[2rem]">
 			{title}
 		</h3>

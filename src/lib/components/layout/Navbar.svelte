@@ -1,14 +1,18 @@
-<script>
+<script lang="ts">
+	import LanguageSelector from '$lib/i18n/components/LanguageSelector.svelte';
+	import type { Language } from '$lib/i18n/types';
 	import NavLink from '../ui/NavLink.svelte';
+
+	const { language } = $props<{ language: Language }>();
 
 	let isMobileMenuExpanded = $state(false);
 
-	const navigationItems = [
-		{ href: '/#what-i-do', label: 'What I Do' },
-		{ href: '/#who-i-am', label: 'Who I Am' },
-		{ href: '/#my-work', label: 'My Work' },
-		{ href: '/#contact', label: 'Get in Touch' }
-	];
+	const navigationItems = $derived([
+		{ href: `/${language}/#what-i-do`, label: 'What I Do' },
+		{ href: `/${language}/#who-i-am`, label: 'Who I Am' },
+		{ href: `/${language}/#my-work`, label: 'My Work' },
+		{ href: `/${language}/#contact`, label: 'Get in Touch' }
+	]);
 
 	function toggleMobileMenu() {
 		isMobileMenuExpanded = !isMobileMenuExpanded;
@@ -26,6 +30,7 @@
 		</li>
 	{/each}
 {/snippet}
+
 <header
 	class="fixed top-0 left-0 z-90 w-full shadow-sm bg-black/60 backdrop-blur-md border-b border-border"
 >
@@ -34,7 +39,7 @@
 		aria-label="Main navigation"
 	>
 		<a
-			href="/"
+			href={`/${language}`}
 			class="text-2xl font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
 			aria-label="Tomás Sorgetti - Home"
 			onclick={closeMobileMenu}
@@ -71,6 +76,9 @@
 
 		<ul class="hidden lg:flex gap-6" role="list">
 			{@render navigationList('')}
+			<li class="flex items-center justify-center">
+				<LanguageSelector locale={language} />
+			</li>
 		</ul>
 	</nav>
 

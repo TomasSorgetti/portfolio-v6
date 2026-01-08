@@ -8,6 +8,10 @@
 	import WhatsappIcon from '../../assets/icons/whatsapp.svg';
 	import Background from '../../assets/videos/contact.mp4';
 
+	export let translations: any;
+
+	const { title, content1, content2, leyend, form: formTranslations } = translations;
+
 	type ContactFormValues = {
 		email: string;
 		message: string;
@@ -108,16 +112,15 @@
 	>
 		<article>
 			<header>
-				<h2 class="text-4xl font-bold max-w-md">Let’s Build Something That Works</h2>
+				<h2 class="text-4xl font-bold max-w-md">{title}</h2>
 			</header>
 
 			<p class="max-w-md text-font-secondary mt-4">
-				I’m a junior full stack web developer focused on building clean, functional, and
-				user-friendly digital experiences.
+				{content1}
 			</p>
 
 			<p class="max-w-md text-font-secondary mt-2">
-				If you have an idea, a project, or just want to connect, I’d love to hear from you.
+				{content2}
 			</p>
 
 			<nav
@@ -142,7 +145,7 @@
 			</nav>
 
 			<small class="max-w-md text-font-secondary mt-4 block">
-				Open to freelance projects, junior positions, and collaborations.
+				{leyend}
 			</small>
 		</article>
 
@@ -155,9 +158,9 @@
 			<CustomInput
 				type="email"
 				id="contact-email"
-				label="Email"
+				label={formTranslations.email.label}
 				hasLabel={false}
-				placeholder="Your email..."
+				placeholder={formTranslations.email.placeholder}
 				name="email"
 				bind:value={formValues.email}
 				error={formErrors.email}
@@ -168,9 +171,9 @@
 			<CustomInput
 				type="textarea"
 				id="contact-message"
-				label="Message"
+				label={formTranslations.message.label}
 				hasLabel={false}
-				placeholder="Your message..."
+				placeholder={formTranslations.message.placeholder}
 				name="message"
 				bind:value={formValues.message}
 				error={formErrors.message}
@@ -185,7 +188,7 @@
 				{isSuccess}
 				{isError}
 			>
-				Send email
+				{formTranslations.submit.label}
 			</FormButton>
 
 			<div id="contact-form-status" class="sr-only" aria-live="assertive">
@@ -193,15 +196,15 @@
 					<span>{errorMessage}</span>
 				{/each}
 				{#if isSuccess}
-					<span>Message sent successfully</span>
+					<span>{formTranslations.onSuccess}</span>
 				{/if}
 				{#if isError}
-					<span>There was an error sending the message</span>
+					<span>{formTranslations.onError}</span>
 				{/if}
 			</div>
 
 			<small class="text-font-secondary text-center block">
-				Or email me directly at
+				{formTranslations.leyend}
 				<a href="mailto:tomassorgetti456@gmail.com" class="underline">
 					tomassorgetti456@gmail.com
 				</a>

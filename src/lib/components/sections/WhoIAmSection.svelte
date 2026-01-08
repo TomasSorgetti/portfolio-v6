@@ -3,6 +3,10 @@
 	import InfoCard from '../ui/InfoCard.svelte';
 	import InfoCardWithImage from '../ui/InfoCardWithImage.svelte';
 
+	export let translations: any;
+
+	const { title, content, cards: cardsTranslations } = translations;
+
 	type ImageCard = {
 		variant: 'image';
 		title: string;
@@ -23,32 +27,28 @@
 	const cards: CardContent[] = [
 		{
 			variant: 'image',
-			title: 'Design-Driven Logic',
-			content:
-				"My background in design isn't just about aesthetics; it’s about understanding user behavior to write better functional requirements.",
-			leyend: 'Figma-to-Code: Pixel-perfect UI & Design Systems.',
+			title: cardsTranslations[1].title,
+			content: cardsTranslations[1].content,
+			leyend: cardsTranslations[1].leyend,
 			type: 'default'
 		},
 		{
 			variant: 'default',
-			title: 'User-Centric Engineering',
-			content:
-				'I write code that solves problems. Every function and component is built with the end-user’s experience in mind.',
-			leyend: 'UX: Accessibility, Performance & User Flows.'
+			title: cardsTranslations[2].title,
+			content: cardsTranslations[2].content,
+			leyend: cardsTranslations[2].leyend
 		},
 		{
 			variant: 'default',
-			title: 'Continuous Iteration',
-			content:
-				'Tech evolves, and so does my stack. I’m currently deep-diving into TypeScript and Unit Testing to improve delivery quality.',
-			leyend: 'Learning: TypeScript, Testing & Clean Code.'
+			title: cardsTranslations[3].title,
+			content: cardsTranslations[3].content,
+			leyend: cardsTranslations[3].leyend
 		},
 		{
 			variant: 'image',
-			title: 'Agile & Team-Ready',
-			content:
-				'I thrive in collaborative environments, using Git-flow and agile methodologies to contribute effectively from day one.',
-			leyend: 'DevOps: Git-flow, Agile & Team Collaboration.',
+			title: cardsTranslations[4].title,
+			content: cardsTranslations[4].content,
+			leyend: cardsTranslations[4].leyend,
 			type: 'rocket'
 		}
 	];
@@ -57,12 +57,11 @@
 <AccessibleSection id="who-i-am" label="Beyond the Terminal section">
 	<header class="lg:my-20 text-center">
 		<h2 class="text-[2rem] font-bold md:text-[2.5rem] lg:text-5xl">
-			Problem Solving Beyond Syntax
+			{title}
 		</h2>
 
 		<p class="max-w-125 my-4 mx-auto font-light">
-			I believe that great code is fueled by a well-rounded life. driven by endless curiosity, a
-			passion for design, and the drive to solve real-world problems.
+			{content}
 		</p>
 	</header>
 

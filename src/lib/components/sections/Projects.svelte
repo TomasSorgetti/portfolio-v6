@@ -7,6 +7,10 @@
 	import GoosterImage from '../../assets/images/projects/gooster.png';
 	import EscrowImage from '../../assets/images/projects/iescrow.png';
 
+	export let translations: any;
+
+	const { title, cta, projects: projectsTranslations } = translations;
+
 	type Project = {
 		id: 'proterline' | 'gooster' | 'sieteVidas' | 'iEscrow';
 		title: string;
@@ -21,38 +25,34 @@
 	const projects: Record<Project['id'], Project> = {
 		proterline: {
 			id: 'proterline',
-			title: 'Proterline',
-			description:
-				'Achieved 100/100 Lighthouse score. Focused on SEO, accessibility, and high-speed delivery using Astro.',
+			title: projectsTranslations.proterline.title,
+			description: projectsTranslations.proterline.content,
 			image: ProterlineImage,
-			imageAlt: 'Proterline dashboard interface showing analytics',
+			imageAlt: projectsTranslations.proterline.imageAlt,
 			link: 'https://proterline.com.ar'
 		},
 		gooster: {
 			id: 'gooster',
-			title: 'Gooster',
-			description:
-				'Optimized a React/Vite legacy codebase, improving load times by 40% and implementing a reusable component library.',
+			title: projectsTranslations.gooster.title,
+			description: projectsTranslations.gooster.content,
 			image: GoosterImage,
-			imageAlt: 'Gooster mobile application login screen',
+			imageAlt: projectsTranslations.gooster.imageAlt,
 			link: 'https://gooster.com.ar'
 		},
 		sieteVidas: {
 			id: 'sieteVidas',
-			title: 'Siete Vidas',
-			description:
-				'Developed an Astro-based platform with dynamic data fetching, fully responsive design, and WCAG accessibility compliance.',
+			title: projectsTranslations.sieteVidas.title,
+			description: projectsTranslations.sieteVidas.content,
 			image: SieteVidasImage,
-			imageAlt: 'Siete Vidas e-commerce platform homepage',
+			imageAlt: projectsTranslations.sieteVidas.imageAlt,
 			link: 'https://7vidas.online'
 		},
 		iEscrow: {
 			id: 'iEscrow',
-			title: 'iEscrow',
-			description:
-				'Custom design and layout using React/Vite. Frontend-focused project emphasizing structure and styling.',
+			title: projectsTranslations.iescrow.title,
+			description: projectsTranslations.iescrow.content,
 			image: EscrowImage,
-			imageAlt: 'iEscrow financial transaction secure panel',
+			imageAlt: projectsTranslations.iescrow.imageAlt,
 			link: 'https://iescrow.io'
 		}
 	};
@@ -65,7 +65,7 @@
 >
 	<header>
 		<h2 id="portfolio-heading" class="text-5xl text-center font-bold">
-			Featured Engineering Projects
+			{title}
 		</h2>
 	</header>
 
@@ -73,7 +73,7 @@
 		<div class="relative flex flex-col gap-4 w-full lg:max-w-3/4 lg:mx-auto">
 			<div class="relative flex flex-col items-end gap-4 md:flex-row lg:mt-16">
 				<div class="relative h-full aspect-square">
-					<SeeAllLink profileUrl={GITHUB_PROFILE_URL} />
+					<SeeAllLink profileUrl={GITHUB_PROFILE_URL}>{cta}</SeeAllLink>
 
 					<ProjectCard
 						title={projects.proterline.title}

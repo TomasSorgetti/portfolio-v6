@@ -2,6 +2,10 @@
 	import FeatureItem from '../ui/FeatureItem.svelte';
 	import PinkWorld from '../../assets/images/pink_world.png';
 
+	export let translations: any;
+
+	const { title, cards } = translations;
+
 	type Feature = {
 		number: string;
 		title: string;
@@ -11,18 +15,18 @@
 	const features: Feature[] = [
 		{
 			number: '01.',
-			title: 'From Design to Code.',
-			text: 'I translate Figma prototypes into pixel-perfect, accessible interfaces, ensuring design fidelity and seamless transitions.'
+			title: cards[1].title,
+			text: cards[1].text
 		},
 		{
 			number: '02.',
-			title: 'Performance-First Frontend.',
-			text: 'Building with React & Next.js focused on Core Web Vitals, SEO, and component modularity for long-term scalability.'
+			title: cards[2].title,
+			text: cards[2].text
 		},
 		{
 			number: '03.',
-			title: 'Solid Server-Side Logic.',
-			text: 'Developing secure RESTful APIs with Node.js and PostgreSQL, prioritizing data integrity and system reliability.'
+			title: cards[3].title,
+			text: cards[3].text
 		}
 	];
 </script>
@@ -47,7 +51,7 @@
 		<article>
 			<header>
 				<h2 id="features-title" class="text-3xl mb-8 lg:text-5xl lg:max-w-md">
-					Technical Expertise & Workflow
+					{title}
 				</h2>
 			</header>
 

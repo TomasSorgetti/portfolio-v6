@@ -3,6 +3,9 @@
 	import HeroVideo from '../../assets/videos/hero.mp4';
 	import MainButton from '../ui/MainButton.svelte';
 
+	export let translations: any;
+	const { label, title, content, cta } = translations;
+
 	let videoElement: HTMLVideoElement | null = null;
 	let isMotionReduced = false;
 
@@ -43,20 +46,19 @@
 			class="flex flex-col items-center max-w-lg md:max-w-xl lg:items-start lg:pb-20 lg:max-w-150 xl:max-w-175"
 		>
 			<p class="text-xl font-thin text-font-secondary lg:text-2xl">
-				Hi, I'm Tomás — Full Stack Developer
+				{label}
 			</p>
 
 			<h1 id="hero-heading" class="text-[2rem] md:text-4xl font-black mb-4 lg:text-5xl lg:mt-2">
-				Building High-Performance Web Apps for the Modern Web
+				{title}
 			</h1>
 
 			<p class="text-base text-font-secondary font-thin mb-4 max-w-lg leading-relaxed xl:max-w-125">
-				I bridge the gap between complex backend logic and intuitive frontend experiences.
-				Specialized in JavaScript, performance optimization, and clean, maintainable code.
+				{content}
 			</p>
 
 			<div class="pt-4">
-				<MainButton href="#my-work" label="View My Work" />
+				<MainButton href="#my-work" label={cta} />
 			</div>
 		</article>
 	</div>
