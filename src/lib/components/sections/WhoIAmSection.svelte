@@ -56,7 +56,7 @@
 
 <AccessibleSection id="who-i-am" label="Beyond the Terminal section">
 	<header class="lg:my-20 text-center">
-		<h2 class="text-[2rem] font-bold md:text-[2.5rem] lg:text-5xl">
+		<h2 class="text-[2rem] font-bold md:text-[2.5rem] lg:text-5xl lg:max-w-4xl lg:mx-auto">
 			{title}
 		</h2>
 

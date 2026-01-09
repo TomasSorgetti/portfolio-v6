@@ -15,18 +15,21 @@
 
 <article
 	aria-labelledby={`${headingId}-heading`}
-	class="relative bg-black/60 backdrop-blur-md rounded-2xl p-8 pt-0 border flex flex-col-reverse border-border md:min-h-78 md:flex md:justify-between md:gap-4"
+	class="relative bg-black/60 backdrop-blur-md rounded-2xl p-8 pt-0 border flex flex-col-reverse border-border md:min-h-78 md:py-8 md:flex-row md:justify-between md:items-center md:gap-4 lg:min-h-82"
 >
 	<div class="text-center md:text-left relative z-20">
-		<h3 id={`${headingId}-heading`} class="font-semibold mb-2 text-2xl lg:text-[2rem]">
+		<h3
+			id={`${headingId}-heading`}
+			class="font-semibold mb-2 text-2xl lg:text-[2rem] lg:max-w-sm lg:leading-9"
+		>
 			{title}
 		</h3>
 
-		<p class="font-light md:max-w-xs text-font-secondary text-md mt-6">
+		<p class="font-light md:max-w-xs text-font-secondary text-sm mt-6 lg:mt-2">
 			{content}
 		</p>
 
-		<small class="text-sm italic mt-4 block max-w-75 mx-auto md:mx-0">{leyend}</small>
+		<small class="text-sm italic mt-4 block max-w-75 mx-auto md:mx-0 lg:mt-2">{leyend}</small>
 
 		<slot />
 	</div>

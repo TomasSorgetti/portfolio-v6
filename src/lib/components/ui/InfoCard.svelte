@@ -9,14 +9,17 @@
 
 <article
 	aria-labelledby={headingId}
-	class="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-border text-center md:min-h-78 md:text-left"
+	class="bg-black/60 backdrop-blur-md rounded-2xl p-8 border border-border text-center md:min-h-78 md:text-left lg:min-h-82"
 	class:md:col-span-2={span}
 >
-	<h3 id={headingId} class="font-semibold mb-6 text-2xl md:mb-2 lg:text-[2rem]">
+	<h3
+		id={headingId}
+		class="font-semibold mb-6 text-2xl md:mb-2 lg:text-[2rem] lg:mb-2 lg:leading-9"
+	>
 		{title}
 	</h3>
 
-	<p class="font-light md:max-w-100 text-font-secondary text-md">
+	<p class="font-light md:max-w-100 text-font-secondary text-sm">
 		{content}
 	</p>
 

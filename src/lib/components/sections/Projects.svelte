@@ -6,6 +6,8 @@
 	import SieteVidasImage from '../../assets/images/projects/sietevidas.png';
 	import GoosterImage from '../../assets/images/projects/gooster.png';
 	import EscrowImage from '../../assets/images/projects/iescrow.png';
+	import KodaImage from '../../assets/images/projects/koda.png';
+	import BlogifyImage from '../../assets/images/projects/blogify.png';
 
 	export let translations: any;
 
@@ -127,6 +129,36 @@
 					contentClass="absolute p-8 top-10 left-4 lg:top-12 lg:max-w-md"
 					headingClass="lg:text-4xl"
 				/>
+			</div>
+
+			<div class="relative cursor-not-allowed">
+				<div class="absolute top-0 right-0 bg-primary py-2 px-4 rounded lg:-right-4">
+					Coming Soon!
+				</div>
+				<div class="w-full my-6 h-125 overflow-hidden rounded-3xl">
+					<img
+						src={KodaImage}
+						alt=""
+						class="w-full h-full object-cover"
+						draggable="false"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+
+			<div class="relative cursor-not-allowed">
+				<div class="absolute top-0 right-0 bg-primary py-2 px-4 rounded lg:-right-4">
+					Coming Soon!
+				</div>
+				<div class="w-full my-6 h-125 overflow-hidden rounded-3xl">
+					<img
+						src={BlogifyImage}
+						alt=""
+						class="w-full h-full object-cover"
+						draggable="false"
+						loading="lazy"
+					/>
+				</div>
 			</div>
 		</div>
 	</div>

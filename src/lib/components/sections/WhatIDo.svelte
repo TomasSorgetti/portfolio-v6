@@ -50,7 +50,7 @@
 
 		<article>
 			<header>
-				<h2 id="features-title" class="text-3xl mb-8 lg:text-5xl lg:max-w-md">
+				<h2 id="features-title" class="text-3xl mb-8 lg:text-5xl lg:max-w-lg">
 					{title}
 				</h2>
 			</header>
