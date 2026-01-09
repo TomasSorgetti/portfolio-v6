@@ -122,11 +122,11 @@ export const portugueseTranslations = {
 			form: {
 				email: {
 					label: 'Email',
-					placeHolder: 'Digite seu endereço de email'
+					placeholder: 'Digite seu endereço de email'
 				},
 				message: {
 					label: 'Mensagem',
-					placeHolder: 'Digite sua mensagem'
+					placeholder: 'Digite sua mensagem'
 				},
 				submit: {
 					label: 'Enviar email'

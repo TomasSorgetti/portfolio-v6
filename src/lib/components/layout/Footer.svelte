@@ -2,12 +2,12 @@
 	import CustomInput from '../ui/CustomInput.svelte';
 	import FormButton from '../ui/FormButton.svelte';
 	import { ArrowRight } from '@lucide/svelte';
-	import type { Language } from '$lib/i18n/types';
 
-	const { language } = $props<{ language: Language }>();
+	import SOCIAL from '$lib/constants/social';
 
 	type NavigationItem = {
 		href: string;
+		target: string;
 		label: string;
 	};
 
@@ -28,21 +28,21 @@
 			id: 'navigation',
 			title: 'Web site',
 			items: [
-				{ href: '/#what-i-do', label: 'What I Do' },
-				{ href: '/#who-i-am', label: 'Who I Am' },
-				{ href: '/#my-work', label: 'My Work' },
-				{ href: '/#contact', label: 'Get in Touch' }
+				{ href: '/#what-i-do', target: '_self', label: 'What I Do' },
+				{ href: '/#who-i-am', target: '_self', label: 'Who I Am' },
+				{ href: '/#my-work', target: '_self', label: 'My Work' },
+				{ href: '/#contact', target: '_self', label: 'Get in Touch' }
 			]
 		},
 		{
 			id: 'social',
 			title: 'Social media',
 			items: [
-				{ href: '/#a', label: 'Discord' },
-				{ href: '/#b', label: 'Github' },
-				{ href: '/#c', label: 'Linkedin' },
-				{ href: '/#d', label: 'Whatsapp' },
-				{ href: '/#e', label: 'Telegram' }
+				{ href: SOCIAL.DISCORD, target: '_blank', label: 'Discord' },
+				{ href: SOCIAL.GITHUB, target: '_blank', label: 'Github' },
+				{ href: SOCIAL.LINKEDIN, target: '_blank', label: 'Linkedin' },
+				{ href: SOCIAL.WHATSAPP, target: '_blank', label: 'Whatsapp' },
+				{ href: SOCIAL.TELEGRAM, target: '_blank', label: 'Telegram' }
 			]
 		}
 	];
@@ -91,7 +91,11 @@
 						<ul class="mt-3 space-y-1">
 							{#each section.items as link (link.href)}
 								<li>
-									<a href={link.href} class="text-md text-font-secondary hover:text-font-primary">
+									<a
+										href={link.href}
+										target={link.target}
+										class="text-md text-font-secondary hover:text-font-primary"
+									>
 										{link.label}
 									</a>
 								</li>
@@ -103,9 +107,9 @@
 				<section class="">
 					<h2 class="font-semibold text-xl">Address</h2>
 					<address class="not-italic mt-3 space-y-1">
-						<p class="text-md text-font-secondary">Buenos Aires, Argentina</p>
-						<p class="text-md text-font-secondary">tomassorgetti456@gmail.com</p>
-						<p class="text-md text-font-secondary">(+54) 11 3632-3780</p>
+						<p class="text-md text-font-secondary">{SOCIAL.ADDRESS}</p>
+						<p class="text-md text-font-secondary">{SOCIAL.GMAIL}</p>
+						<p class="text-md text-font-secondary">{SOCIAL.PHONE}</p>
 					</address>
 				</section>
 

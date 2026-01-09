@@ -122,11 +122,11 @@ export const japaneseTranslations = {
 			form: {
 				email: {
 					label: 'メールアドレス',
-					placeHolder: 'メールアドレスを入力してください'
+					placeholder: 'メールアドレスを入力してください'
 				},
 				message: {
 					label: 'メッセージ',
-					placeHolder: 'メッセージを入力してください'
+					placeholder: 'メッセージを入力してください'
 				},
 				submit: {
 					label: 'メールを送信'

@@ -115,8 +115,8 @@ export const germanTranslations = {
 			content2: 'Wenn Sie eine Idee haben, freue ich mich, von Ihnen zu hören.',
 			leyend: 'Offen für Freelance-Projekte, Junior-Positionen und Kollaborationen.',
 			form: {
-				email: { label: 'E-Mail', placeHolder: 'E-Mail-Adresse eingeben' },
-				message: { label: 'Nachricht', placeHolder: 'Nachricht eingeben' },
+				email: { label: 'E-Mail', placeholder: 'E-Mail-Adresse eingeben' },
+				message: { label: 'Nachricht', placeholder: 'Nachricht eingeben' },
 				submit: { label: 'E-Mail senden' },
 				onSuccess: 'Nachricht erfolgreich gesendet',
 				onError: 'Fehler beim Senden',

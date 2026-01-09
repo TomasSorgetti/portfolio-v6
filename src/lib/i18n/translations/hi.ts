@@ -100,8 +100,8 @@ export const indianTranslations = {
 			content2: 'यदि आपके पास कोई विचार है, तो मुझे आपसे बात करके खुशी होगी।',
 			leyend: 'फ्रीलांस और जूनियर पदों के लिए उपलब्ध।',
 			form: {
-				email: { label: 'ईमेल', placeHolder: 'अपना ईमेल दर्ज करें' },
-				message: { label: 'संदेश', placeHolder: 'अपना संदेश लिखें' },
+				email: { label: 'ईमेल', placeholder: 'अपना ईमेल दर्ज करें' },
+				message: { label: 'संदेश', placeholder: 'अपना संदेश लिखें' },
 				submit: { label: 'ईमेल भेजें' },
 				onSuccess: 'संदेश सफलतापूर्वक भेजा गया',
 				onError: 'संदेश भेजने में त्रुटि हुई',

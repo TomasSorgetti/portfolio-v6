@@ -1,6 +1,8 @@
 <script lang="ts">
 	import GithubIcon from '../../assets/images/github.png';
 
+	import SOCIAL from '../../constants/social';
+
 	export let translations: any;
 
 	const { title, content, cta } = translations;
@@ -19,7 +21,8 @@
 				{content}
 			</p>
 			<a
-				href="/#"
+				href={SOCIAL.GITHUB}
+				target="_blank"
 				class="mt-4 flex items-center justify-center rounded-full text-center font-semibold py-3 px-6 bg-white text-font-invert"
 			>
 				{cta}

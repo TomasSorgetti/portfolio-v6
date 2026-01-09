@@ -8,9 +8,17 @@
 	import WhatsappIcon from '../../assets/icons/whatsapp.svg';
 	import Background from '../../assets/videos/contact.mp4';
 
-	export let translations: any;
+	import SOCIAL from '../../constants/social';
 
-	const { title, content1, content2, leyend, form: formTranslations } = translations;
+	export let translations: any = {};
+
+	$: ({
+		title,
+		content1,
+		content2,
+		leyend,
+		form: formTranslations = { email: {}, message: {}, submit: {} }
+	} = translations);
 
 	type ContactFormValues = {
 		email: string;
@@ -127,19 +135,19 @@
 				class="flex items-center justify-center gap-4 mt-4 lg:justify-start"
 				aria-label="Social links"
 			>
-				<a href="/#" aria-label="GitHub profile">
+				<a href={SOCIAL.GITHUB} target="_blank" aria-label="GitHub profile">
 					<img src={GithubIcon} alt="" />
 				</a>
-				<a href="/#" aria-label="LinkedIn profile">
+				<a href={SOCIAL.LINKEDIN} target="_blank" aria-label="LinkedIn profile">
 					<img src={LinkedinIcon} alt="" />
 				</a>
-				<a href="/#" aria-label="Discord contact">
+				<a href={SOCIAL.DISCORD} target="_blank" aria-label="Discord contact">
 					<img src={DiscordIcon} alt="" />
 				</a>
-				<a href="/#" aria-label="Telegram contact">
+				<a href={SOCIAL.TELEGRAM} target="_blank" aria-label="Telegram contact">
 					<img src={TelegramIcon} alt="" />
 				</a>
-				<a href="/#" aria-label="WhatsApp contact">
+				<a href={SOCIAL.WHATSAPP} target="_blank" aria-label="WhatsApp contact">
 					<img src={WhatsappIcon} alt="" />
 				</a>
 			</nav>

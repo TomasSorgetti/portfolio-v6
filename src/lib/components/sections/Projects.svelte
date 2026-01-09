@@ -2,6 +2,8 @@
 	import ProjectCard from '$lib/components/ui/ProjectCard.svelte';
 	import SeeAllLink from '$lib/components/ui/SeeAllLink.svelte';
 
+	import SOCIAL from '$lib/constants/social';
+
 	import ProterlineImage from '../../assets/images/projects/proterline.png';
 	import SieteVidasImage from '../../assets/images/projects/sietevidas.png';
 	import GoosterImage from '../../assets/images/projects/gooster.png';
@@ -21,8 +23,6 @@
 		imageAlt: string;
 		link: string;
 	};
-
-	const GITHUB_PROFILE_URL = 'https://github.com/TomasSorgetti';
 
 	const projects: Record<Project['id'], Project> = {
 		proterline: {
@@ -75,7 +75,7 @@
 		<div class="relative flex flex-col gap-4 w-full lg:max-w-3/4 lg:mx-auto">
 			<div class="relative flex flex-col items-end gap-4 md:flex-row lg:mt-16">
 				<div class="relative h-full aspect-square">
-					<SeeAllLink profileUrl={GITHUB_PROFILE_URL}>{cta}</SeeAllLink>
+					<SeeAllLink profileUrl={SOCIAL.GITHUB}>{cta}</SeeAllLink>
 
 					<ProjectCard
 						title={projects.proterline.title}

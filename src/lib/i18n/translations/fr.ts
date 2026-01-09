@@ -112,8 +112,8 @@ export const frenchTranslations = {
 			content2: 'Si vous avez une idée, j’aimerais beaucoup en discuter.',
 			leyend: 'Ouvert au freelance, postes junior et collaborations.',
 			form: {
-				email: { label: 'Email', placeHolder: 'Votre adresse email' },
-				message: { label: 'Message', placeHolder: 'Votre message' },
+				email: { label: 'Email', placeholder: 'Votre adresse email' },
+				message: { label: 'Message', placeholder: 'Votre message' },
 				submit: { label: 'Envoyer' },
 				onSuccess: 'Message envoyé avec succès',
 				onError: 'Erreur lors de l’envoi',

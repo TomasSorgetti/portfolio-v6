@@ -3,6 +3,8 @@
 	import InfoCard from '../ui/InfoCard.svelte';
 	import InfoCardWithImage from '../ui/InfoCardWithImage.svelte';
 
+	import SOCIAL from '$lib/constants/social';
+
 	export let translations: any;
 
 	const { title, content, cards: cardsTranslations } = translations;
@@ -79,13 +81,14 @@
 						type={card.type ?? 'default'}
 					>
 						{#if card.type === 'rocket'}
-							<button
-								type="button"
-								class="mt-4 py-3 px-6 bg-white text-font-invert font-bold rounded-full cursor-pointer"
+							<a
+								href={SOCIAL.CV}
+								target="_blank"
+								class="mt-4 py-3 px-6 flex items-center justify-center max-w-55 bg-white text-font-invert font-bold rounded-full cursor-pointer"
 								aria-describedby="resume-desc"
 							>
 								Download Resume
-							</button>
+							</a>
 						{/if}
 					</InfoCardWithImage>
 				{:else}

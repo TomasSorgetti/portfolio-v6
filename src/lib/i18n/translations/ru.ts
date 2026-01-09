@@ -99,8 +99,8 @@ export const rusianTranslations = {
 			content2: 'Если у вас есть идея, буду рад обсудить.',
 			leyend: 'Открыт для фриланса и Junior-позиций.',
 			form: {
-				email: { label: 'Email', placeHolder: 'Ваш email' },
-				message: { label: 'Сообщение', placeHolder: 'Ваше сообщение' },
+				email: { label: 'Email', placeholder: 'Ваш email' },
+				message: { label: 'Сообщение', placeholder: 'Ваше сообщение' },
 				submit: { label: 'Отправить' },
 				onSuccess: 'Сообщение отправлено',
 				onError: 'Ошибка отправки',

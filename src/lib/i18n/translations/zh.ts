@@ -112,11 +112,11 @@ export const chineseTranslations = {
 			form: {
 				email: {
 					label: '邮箱',
-					placeHolder: '请输入您的邮箱地址'
+					placeholder: '请输入您的邮箱地址'
 				},
 				message: {
 					label: '留言',
-					placeHolder: '请输入您的信息'
+					placeholder: '请输入您的信息'
 				},
 				submit: {
 					label: '发送邮件'
