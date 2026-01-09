@@ -87,7 +87,7 @@
 								class="mt-4 py-3 px-6 flex items-center justify-center max-w-55 bg-white text-font-invert font-bold rounded-full cursor-pointer"
 								aria-describedby="resume-desc"
 							>
-								Download Resume
+								{cardsTranslations[4].cta}
 							</a>
 						{/if}
 					</InfoCardWithImage>
