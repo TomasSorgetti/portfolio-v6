@@ -108,6 +108,26 @@ export const rusianTranslations = {
 			}
 		}
 	},
+	navbar: {
+		what: 'Чем я занимаюсь',
+		who: 'О себе',
+		projects: 'Мои работы',
+		contact: 'Связаться со мной'
+	},
+	footer: {
+		website: {
+			title: 'Веб-сайт',
+			items: {
+				what: 'Чем я занимаюсь',
+				who: 'О себе',
+				projects: 'Мои работы',
+				contact: 'Связаться со мной'
+			}
+		},
+		social: 'Социальные сети',
+		address: 'Адрес',
+		newsletter: 'Рассылка'
+	},
 	seo: {
 		home: {
 			title: 'Tomás Sorgetti | Full Stack разработчик | React & Node.js эксперт',

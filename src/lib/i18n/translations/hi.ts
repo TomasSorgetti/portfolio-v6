@@ -109,6 +109,26 @@ export const indianTranslations = {
 			}
 		}
 	},
+	navbar: {
+		what: 'मैं क्या करता हूँ',
+		who: 'मैं कौन हूँ',
+		projects: 'मेरा काम',
+		contact: 'संपर्क करें'
+	},
+	footer: {
+		website: {
+			title: 'वेबसाइट',
+			items: {
+				what: 'मैं क्या करता हूँ',
+				who: 'मैं कौन हूँ',
+				projects: 'मेरा काम',
+				contact: 'संपर्क करें'
+			}
+		},
+		social: 'सोशल मीडिया',
+		address: 'पता',
+		newsletter: 'न्यूज़लेटर'
+	},
 	seo: {
 		home: {
 			title: 'Tomás Sorgetti | फुल स्टैक डेवलपर | React & Node.js विशेषज्ञ',

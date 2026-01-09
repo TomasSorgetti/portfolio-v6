@@ -127,6 +127,26 @@ export const chineseTranslations = {
 			}
 		}
 	},
+	navbar: {
+		what: '业务内容',
+		who: '关于我',
+		projects: '我的作品',
+		contact: '联系我'
+	},
+	footer: {
+		website: {
+			title: '网站',
+			items: {
+				what: '业务内容',
+				who: '关于我',
+				projects: '我的作品',
+				contact: '联系 me'
+			}
+		},
+		social: '社交媒体',
+		address: '地址',
+		newsletter: '时事通讯'
+	},
 	seo: {
 		home: {
 			title: 'Tomás Sorgetti | 全栈开发工程师 | React & Node.js 专家',

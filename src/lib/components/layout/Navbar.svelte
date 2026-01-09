@@ -3,15 +3,25 @@
 	import type { Language } from '$lib/i18n/types';
 	import NavLink from '../ui/NavLink.svelte';
 
-	const { language } = $props<{ language: Language }>();
+	interface Props {
+		language: Language;
+		translations: {
+			what: string;
+			who: string;
+			projects: string;
+			contact: string;
+		};
+	}
+
+	const { language, translations } = $props<Props>();
 
 	let isMobileMenuExpanded = $state(false);
 
 	const navigationItems = $derived([
-		{ href: `/${language}/#what-i-do`, label: 'What I Do' },
-		{ href: `/${language}/#who-i-am`, label: 'Who I Am' },
-		{ href: `/${language}/#my-work`, label: 'My Work' },
-		{ href: `/${language}/#contact`, label: 'Get in Touch' }
+		{ href: `/${language}/#what-i-do`, label: translations.what },
+		{ href: `/${language}/#who-i-am`, label: translations.who },
+		{ href: `/${language}/#my-work`, label: translations.projects },
+		{ href: `/${language}/#contact`, label: translations.contact }
 	]);
 
 	function toggleMobileMenu() {

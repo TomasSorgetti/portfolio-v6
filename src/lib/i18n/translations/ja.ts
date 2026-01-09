@@ -137,6 +137,26 @@ export const japaneseTranslations = {
 			}
 		}
 	},
+	navbar: {
+		what: '事業内容',
+		who: '自己紹介',
+		projects: '制作実績',
+		contact: 'お問い合わせ'
+	},
+	footer: {
+		website: {
+			title: 'ウェブサイト',
+			items: {
+				what: '事業内容',
+				who: '自己紹介',
+				projects: '制作実績',
+				contact: 'お問い合わせ'
+			}
+		},
+		social: 'ソーシャルメディア',
+		address: '住所',
+		newsletter: 'ニュースレター'
+	},
 	seo: {
 		home: {
 			title: 'Tomás Sorgetti | フルスタックエンジニア | React & Node.js エキスパート',

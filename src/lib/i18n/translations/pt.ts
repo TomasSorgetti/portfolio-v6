@@ -137,6 +137,26 @@ export const portugueseTranslations = {
 			}
 		}
 	},
+	navbar: {
+		what: 'O que eu faço',
+		who: 'Quem sou eu',
+		projects: 'Meu trabalho',
+		contact: 'Entre em contato'
+	},
+	footer: {
+		website: {
+			title: 'Site',
+			items: {
+				what: 'O que eu faço',
+				who: 'Quem sou eu',
+				projects: 'Meu trabalho',
+				contact: 'Entre em contato'
+			}
+		},
+		social: 'Redes sociais',
+		address: 'Endereço',
+		newsletter: 'Newsletter'
+	},
 	seo: {
 		home: {
 			title: 'Tomás Sorgetti | Desenvolvedor Full Stack | Especialista em React & Node.js',

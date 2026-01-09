@@ -4,6 +4,27 @@
 	import { ArrowRight } from '@lucide/svelte';
 
 	import SOCIAL from '$lib/constants/social';
+	import type { Language } from '$lib/i18n/types';
+
+	interface FooterTranslations {
+		website: {
+			title: string;
+			items: {
+				what: string;
+				who: string;
+				projects: string;
+				contact: string;
+			};
+		};
+		social: string;
+		address: string;
+		newsletter: string;
+	}
+
+	const { language, translations } = $props<{
+		language: Language;
+		translations: FooterTranslations;
+	}>();
 
 	type NavigationItem = {
 		href: string;
@@ -23,20 +44,32 @@
 
 	type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>;
 
-	const menuSections: MenuSection[] = [
+	const menuSections = $derived([
 		{
-			id: 'navigation',
-			title: 'Web site',
+			id: 'navigation' as const,
+			title: translations.website.title, // 'Web site' traducido
 			items: [
-				{ href: '/#what-i-do', target: '_self', label: 'What I Do' },
-				{ href: '/#who-i-am', target: '_self', label: 'Who I Am' },
-				{ href: '/#my-work', target: '_self', label: 'My Work' },
-				{ href: '/#contact', target: '_self', label: 'Get in Touch' }
+				{
+					href: `/${language}/#what-i-do`,
+					target: '_self',
+					label: translations.website.items.what
+				},
+				{ href: `/${language}/#who-i-am`, target: '_self', label: translations.website.items.who },
+				{
+					href: `/${language}/#my-work`,
+					target: '_self',
+					label: translations.website.items.projects
+				},
+				{
+					href: `/${language}/#contact`,
+					target: '_self',
+					label: translations.website.items.contact
+				}
 			]
 		},
 		{
-			id: 'social',
-			title: 'Social media',
+			id: 'social' as const,
+			title: translations.social,
 			items: [
 				{ href: SOCIAL.DISCORD, target: '_blank', label: 'Discord' },
 				{ href: SOCIAL.GITHUB, target: '_blank', label: 'Github' },
@@ -45,15 +78,15 @@
 				{ href: SOCIAL.TELEGRAM, target: '_blank', label: 'Telegram' }
 			]
 		}
-	];
+	]);
 
-	let activeMenu: MenuSection['id'] | null = null;
+	let activeMenu = $state<'navigation' | 'social' | null>(null);
 
-	let formValues: ContactFormValues = { email: '' };
-	let formErrors: ContactFormErrors = {};
-	let isSubmitting = false;
-	let isSuccess = false;
-	let isError = false;
+	let formValues = $state<ContactFormValues>({ email: '' });
+	let formErrors = $state<ContactFormErrors>({});
+	let isSubmitting = $state(false);
+	let isSuccess = $state(false);
+	let isError = $state(false);
 
 	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -105,7 +138,7 @@
 				{/each}
 
 				<section class="">
-					<h2 class="font-semibold text-xl">Address</h2>
+					<h2 class="font-semibold text-xl">{translations.address}</h2>
 					<address class="not-italic mt-3 space-y-1">
 						<p class="text-md text-font-secondary">{SOCIAL.ADDRESS}</p>
 						<p class="text-md text-font-secondary">{SOCIAL.GMAIL}</p>
@@ -113,8 +146,8 @@
 					</address>
 				</section>
 
-				<form class="hidden md:block w-full max-w-90 lg:w-70" on:submit={handleSubmit}>
-					<h2 class="font-semibold text-xl">Newsletter</h2>
+				<form class="hidden md:block w-full max-w-90 lg:w-70" onsubmit={handleSubmit}>
+					<h2 class="font-semibold text-xl">{translations.newsletter}</h2>
 
 					<CustomInput
 						type="email"
@@ -155,7 +188,7 @@
 									type="button"
 									class="w-full text-left font-semibold text-base border-t border-border py-4 flex items-center justify-between"
 									aria-haspopup="true"
-									on:click={() => (activeMenu = section.id)}
+									onclick={() => (activeMenu = section.id)}
 								>
 									{section.title}
 									<ArrowRight />
@@ -169,7 +202,7 @@
 							<button
 								type="button"
 								class="mb-4 text-md text-font-secondary"
-								on:click={() => (activeMenu = null)}
+								onclick={() => (activeMenu = null)}
 							>
 								Back
 							</button>

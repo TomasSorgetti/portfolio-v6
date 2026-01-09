@@ -12,8 +12,8 @@
 
 {#key data.lang}
 	<div class="min-h-screen">
-		<Navbar language={data.lang} />
+		<Navbar language={data.lang} translations={data.translations.navbar} />
 		{@render children()}
-		<Footer language={data.lang} />
+		<Footer language={data.lang} translations={data.translations.footer} />
 	</div>
 {/key}
